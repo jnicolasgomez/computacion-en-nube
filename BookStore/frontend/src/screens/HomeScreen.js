@@ -10,7 +10,7 @@ const HomeScreen = () => {
 
     useEffect( () => {
         const fetchBooks = async () => {
-            const { data } = await axios.get('/api/books')
+            const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/api/books`)
             
             setBooks(data)
         }

@@ -12,7 +12,7 @@ const BookScreen = ({ match }) => {
     useEffect(() => {
         const fetchBook = async () => {
             console.log('request a book...')
-            const { data } = await axios.get(`/api/books/${match.params.id}`)
+            const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/api/books/${match.params.id}`)
 
             setBook(data)
         }

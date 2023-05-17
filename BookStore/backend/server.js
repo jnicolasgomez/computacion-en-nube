@@ -4,6 +4,7 @@ import colors from 'colors';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import bookRoutes from './routes/bookRoutes.js'
+import cors from 'cors';
  
 dotenv.config()
 
@@ -11,6 +12,7 @@ connectDB()
 
 const app = express();
 
+app.use(cors());
 const PORT = process.env.PORT || 5000;
 
 app.use('/api/books/', bookRoutes)
